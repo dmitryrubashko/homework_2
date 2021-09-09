@@ -44,9 +44,9 @@ console.log(getCubeOfNumber_2([-2, 3, 5]));
 
 // task_3
 
-const getShortArray_1 = (stringsArray, maxWords) => {
-    return stringsArray.reduce((result, item, index) => {
-             if (index < maxWords) {
+const getShortArray_1 = (stringsArray, maxLetters) => {
+    return stringsArray.reduce((result, item) => {
+             if (item.length <= maxLetters) {
                  result.push(item);
              };
             return result;
@@ -54,25 +54,25 @@ const getShortArray_1 = (stringsArray, maxWords) => {
 };
 
 console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 3));
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 5));
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 100500));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 1));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 4));
 console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], -5));
 
 
-const getShortArray_2 = (stringsArray, maxWords) => {
+const getShortArray_2 = (stringsArray, maxLetters) => {
     const result = [];
     for (let i = 0; i < stringsArray.length; i++) {
-        if (i < maxWords) {
-            result.push(stringsArray[i]);
+        if (item.length <= maxLetters) {
+            result.push(item);
         };
     };
     return result;
 };
 
-console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 3));
-console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 5));
-console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 100500));
-console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], -5));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 3));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 1));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 4));
+console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], -5));
 
 // task_4
 
@@ -107,19 +107,19 @@ const biggestNumber_1 = (numbersArray) => {
     return numbersArray[numbersArray.length-1];
 }
 
-console.log(biggestNumber_1([-4, -77]))
+console.log(biggestNumber_1([-4, -77, 333, 0]))
 
 
 const biggestNumber_2 = (numbersArray) => {
     return Math.max.apply(Math, numbersArray);
 }
 
-console.log(biggestNumber_2([-4, -77]))
+console.log(biggestNumber_2([-4, -77, 333, 0]))
 
 
 const biggestNumber_3 = (numbersArray) => {
-    let maxNumber = -Infinity;
-    for (let i = 0; i < numbersArray.length; i++) {   
+    let maxNumber = numbersArray[0];
+    for (let i = 1; i < numbersArray.length; i++) {   
         if (numbersArray[i] > maxNumber) {
             maxNumber = numbersArray[i]
         };
@@ -127,7 +127,4 @@ const biggestNumber_3 = (numbersArray) => {
     return maxNumber;
 }
 
-console.log(biggestNumber_3([-4, -77]))
-
-
-
+console.log(biggestNumber_3([-4, -77, 333, 0]));
