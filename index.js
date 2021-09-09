@@ -62,17 +62,29 @@ console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], -5));
 const getShortArray_2 = (stringsArray, maxLetters) => {
     const result = [];
     for (let i = 0; i < stringsArray.length; i++) {
-        if (item.length <= maxLetters) {
-            result.push(item);
+        if (stringsArray[i].length <= maxLetters) {
+            result.push(stringsArray[i]);
         };
     };
     return result;
 };
 
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 3));
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 1));
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], 4));
-console.log(getShortArray_1(["My", "name", "is", "Dima", "!"], -5));
+console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 3));
+console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 1));
+console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], 4));
+console.log(getShortArray_2(["My", "name", "is", "Dima", "!"], -5));
+
+
+// task_3 with method 'filter'
+
+const getShortArray_3 = (stringsArray, maxLetters) => {
+    return stringsArray.filter((item) => item.length <= maxLetters);
+}
+
+console.log(getShortArray_3(["My", "name", "is", "Dima", "!"], 3));
+console.log(getShortArray_3(["My", "name", "is", "Dima", "!"], 1));
+console.log(getShortArray_3(["My", "name", "is", "Dima", "!"], 4));
+console.log(getShortArray_3(["My", "name", "is", "Dima", "!"], -5));
 
 // task_4
 
@@ -128,3 +140,4 @@ const biggestNumber_3 = (numbersArray) => {
 }
 
 console.log(biggestNumber_3([-4, -77, 333, 0]));
+
